@@ -28,7 +28,7 @@ class DB
     }
   }
 
-  private static function db_init()
+  public static function db_init()
   {
     $pdo = self::connect();
     $query = "CREATE TABLE IF NOT EXISTS `users` (
@@ -66,3 +66,4 @@ CREATE TABLE IF NOT EXISTS `notes` (
     $result = $statement->execute();
   }
 }
+// DB_OST=host.docker.internalH

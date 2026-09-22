@@ -4,7 +4,10 @@ require "./config/uuid.php";
 require "./config/router.php";
 require "./models/Note.php";
 require "./models/User.php";
+require "./models/DB.php";
 require "./vendor/autoload.php";
+
+DB::db_init();
 
 if (!isset($_SESSION["current_user_id"])) {
   header("Location: ./auth/auth.php");
