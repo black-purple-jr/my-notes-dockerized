@@ -7,7 +7,7 @@ require_once "./models/User.php";
 // require "./models/DB.php";
 require_once "./vendor/autoload.php";
 
-DB::db_init();
+// DB::db_init();
 
 if (!isset($_SESSION["current_user_id"])) {
   header("Location: ./auth/auth.php");
