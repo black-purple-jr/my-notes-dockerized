@@ -66,4 +66,4 @@ CREATE TABLE IF NOT EXISTS `notes` (
     $result = $statement->execute();
   }
 }
-// DB_OST=host.docker.internalH
+// DB_OST=host.docker.internal
