@@ -21,7 +21,7 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
     $mail->Username = "b2bc53001@smtp-brevo.com";
-    $mail->Password = $_ENV["BREVO_API_KEY"];
+    $mail->Password = $_ENV["BREVO_SMTP_KEY"];
     $mail->CharSet = "UTF-8";
 
     $mail->setFrom("mynotes.support@gmail.com", "My Notes");
