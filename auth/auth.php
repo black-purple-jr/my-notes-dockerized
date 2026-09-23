@@ -7,7 +7,7 @@ require "../config/mailer.php";
 require "../vendor/autoload.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/..");
-$dotenv->load();
+$dotenv->safeLoad();
 
 $sign_up_errors = ["email" => null, "username" => null, "password" => null, "password_confirmation" => null];
 $login_errors = ["login" => null, "password" => null];

@@ -15,7 +15,7 @@ if (!isset($_SESSION["current_user_id"])) {
 }
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+$dotenv->safeLoad();
 
 $current_user_id = $_SESSION["current_user_id"];
 $check = User::userExists($current_user_id);

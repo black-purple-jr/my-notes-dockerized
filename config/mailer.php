@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/..");
-$dotenv->load();
+$dotenv->safeLoad();
 
 function send_email(string $to, string $subject, string $htmlBody, string $altBody = ""): bool
 {
