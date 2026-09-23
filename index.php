@@ -1,11 +1,11 @@
 <?php
-require "./config/session.php";
-require "./config/uuid.php";
-require "./config/router.php";
-require "./models/Note.php";
-require "./models/User.php";
-require "./models/DB.php";
-require "./vendor/autoload.php";
+require_once "./config/session.php";
+require_once "./config/uuid.php";
+require_once "./config/router.php";
+require_once "./models/Note.php";
+require_once "./models/User.php";
+// require "./models/DB.php";
+require_once "./vendor/autoload.php";
 
 DB::db_init();
 
