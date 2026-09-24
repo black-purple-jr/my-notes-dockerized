@@ -2,7 +2,9 @@
 
 ## Overview
 
-This is a full-stack notes taking web app built with HTML, CSS, JS and PHP. I pushed the first version as a solution that runs entirely in the browser saving notes in its localStorage object. [Here is the link for its source code](https://github.com/black-purple-jr/my-notes-client). I tried a better approach this time to be able to have multiple users, and I created a login / sign up system and CRUD operations for the notes. The core idea could've been implemented more simply, but I chose to stick with what I already know for now and go further with it rather than reach for something new. I'm still open to learning simpler approaches later.
+This is the same project as [My Notes](https://github.com/black-purple-jr/my-notes) but with a dockerfile ready for production, but there are some UI / UX updates comming soon
+
+[see this code in action](https://my-notes.bpxdevjr.me)
 
 ## Features
 
