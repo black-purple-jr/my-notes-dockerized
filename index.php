@@ -2,8 +2,8 @@
 require "./config/session.php";
 require "./config/uuid.php";
 require "./config/router.php";
-require "./models/Note.php";
-require "./models/User.php";
+require_once "./models/Note.php";
+require_once "./models/User.php";
 require "./vendor/autoload.php";
 
 
