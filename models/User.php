@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . "/DB.php";
+require_once __DIR__ . "/DB.php";
 
 class User extends DB
 {
