@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require "DB.php";
+require_once "DB.php";
 
 class User extends DB
 {
