@@ -20,7 +20,7 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
     $mail->Host = "smtp-relay.brevo.com";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
-    $mail->Username = "baf037001@smtp-brevo.com";
+    $mail->Username = $_ENV["BREVO_LOGIN"];
     $mail->Password = $_ENV["BREVO_SMTP_KEY"];
     $mail->CharSet = "UTF-8";
 
