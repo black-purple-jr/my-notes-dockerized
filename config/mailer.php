@@ -15,6 +15,8 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
   $mail->Debugoutput = 'html';
 
   try {
+    error_log("BREVO_LOGIN length: " . strlen($_ENV["BREVO_LOGIN"] ?? ""));
+    error_log("BREVO_KEY length: " . strlen($_ENV["BREVO_SMTP_KEY"] ?? ""));
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->AuthType = 'LOGIN';
