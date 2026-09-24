@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+namespace App\Models;
+
 require __DIR__ . "/../vendor/autoload.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/..");

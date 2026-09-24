@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the same project as [My Notes](https://github.com/black-purple-jr/my-notes) but with a dockerfile ready for production, but there are some UI / UX updates comming soon
+This is the same project as [My Notes](https://github.com/black-purple-jr/my-notes) but with a dockerfile ready for production, but there are some UI / UX updates comming soon.
 
 [see this code in action](https://my-notes.bpxdevjr.me)
 
