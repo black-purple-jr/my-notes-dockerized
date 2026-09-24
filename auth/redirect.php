@@ -62,7 +62,7 @@ try {
   $_SESSION["current_user_email"] = htmlspecialchars($user["user_email"]);
   $_SESSION["current_user_username"] = htmlspecialchars($user["username"]);
   $_SESSION["current_user_activated"] = true;
-  $_SESSION["used_google_login"] = true;
+
 
   $_SESSION["last_regeneration"] = time();
   regenerate_session_id();

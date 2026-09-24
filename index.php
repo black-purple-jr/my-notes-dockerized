@@ -1,13 +1,11 @@
 <?php
-require_once "./config/session.php";
-require_once "./config/uuid.php";
-require_once "./config/router.php";
-require_once "./models/Note.php";
-require_once "./models/User.php";
-// require "./models/DB.php";
-require_once "./vendor/autoload.php";
+require "./config/session.php";
+require "./config/uuid.php";
+require "./config/router.php";
+require "./models/Note.php";
+require "./models/User.php";
+require "./vendor/autoload.php";
 
-// DB::db_init();
 
 if (!isset($_SESSION["current_user_id"])) {
   header("Location: ./auth/auth.php");
