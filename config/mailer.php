@@ -24,7 +24,7 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
     $mail->Password = $_ENV["BREVO_SMTP_KEY"];
     $mail->CharSet = "UTF-8";
 
-    $mail->setFrom("mynotes.support@gmail.com", "My Notes");
+    $mail->setFrom("dal.dakirallah@gmail.com", "My Notes");
     $mail->addAddress($to);
 
     $mail->isHTML(true);
