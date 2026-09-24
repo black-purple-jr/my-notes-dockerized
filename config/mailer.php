@@ -39,6 +39,6 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
     return true;
   } catch (Exception $e) {
     error_log("Mailer error: " . $mail->ErrorInfo);
-    die("Mailer error: " . $mail->ErrorInfo);
+    return false;
   }
 }
