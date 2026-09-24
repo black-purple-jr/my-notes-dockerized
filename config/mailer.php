@@ -11,7 +11,7 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
 {
   $mail = new PHPMailer(true);
 
-  $mail->SMTPDebug = 0;
+  $mail->SMTPDebug = 2;
   $mail->Debugoutput = 'html';
 
   try {
