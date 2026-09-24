@@ -17,6 +17,7 @@ function send_email(string $to, string $subject, string $htmlBody, string $altBo
   try {
     $mail->isSMTP();
     $mail->SMTPAuth = true;
+    $mail->AuthType = 'LOGIN';
     $mail->Host = "smtp-relay.brevo.com";
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
