@@ -14,7 +14,6 @@ if (!isset($_SESSION["current_user_id"])) {
   exit;
 }
 
-use Dotenv\Dotenv;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
