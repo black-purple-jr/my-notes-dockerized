@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . "DB.php";
+require __DIR__ . "/DB.php";
 
 
 class Note extends DB
