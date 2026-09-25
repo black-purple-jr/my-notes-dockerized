@@ -9,36 +9,51 @@ $dotenv->safeLoad();
 
 function send_email(string $to, string $subject, string $htmlBody, string $altBody = ""): bool
 {
-  $mail = new PHPMailer(true);
+  
+  // $mail = new PHPMailer(true);
 
-  $mail->SMTPDebug = 0;
-  $mail->Debugoutput = 'html';
+  // $mail->SMTPDebug = 0;
+  // $mail->Debugoutput = 'html';
 
   try {
-    error_log("BREVO_LOGIN length: " . strlen($_ENV["BREVO_LOGIN"] ?? ""));
-    error_log("BREVO_KEY length: " . strlen($_ENV["BREVO_SMTP_KEY"] ?? ""));
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
-    $mail->AuthType = 'LOGIN';
-    $mail->Host = "smtp-relay.brevo.com";
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-    $mail->Username = $_ENV["BREVO_LOGIN"];
-    $mail->Password = $_ENV["BREVO_SMTP_KEY"];
-    $mail->CharSet = "UTF-8";
 
-    $mail->setFrom("dal.dakirallah@gmail.com", "My Notes");
-    $mail->addAddress($to);
+    $resend = Resend::client($_ENV["RESEND_API_KEY"]);
 
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body    = $htmlBody;
-    $mail->AltBody = $altBody !== "" ? $altBody : strip_tags($htmlBody);
-
-    $mail->send();
+    $resend->emails->send([
+      "from" => "My Notes <noreply@bpxdevjr.me>",
+      "to" => [$to],
+      "reply_to" => "dal.dakirallah@gmail.com",
+      "subject" => $subject,
+      "html" => $htmlBody,
+      "text" => $altBody !== ""
+        ? $altBody
+        : strip_tags($htmlBody),
+    ]);
     return true;
-  } catch (Exception $e) {
-    error_log("Mailer error: " . $mail->ErrorInfo);
+
+
+    // $mail->isSMTP();
+    // $mail->SMTPAuth = true;
+    // $mail->AuthType = 'LOGIN';
+    // $mail->Host = "smtp-relay.brevo.com";
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    // $mail->Port = 587;
+    // $mail->Username = $_ENV["BREVO_LOGIN"];
+    // $mail->Password = $_ENV["BREVO_SMTP_KEY"];
+    // $mail->CharSet = "UTF-8";
+
+    // $mail->setFrom("dal.dakirallah@gmail.com", "My Notes");
+    // $mail->addAddress($to);
+
+    // $mail->isHTML(true);
+    // $mail->Subject = $subject;
+    // $mail->Body    = $htmlBody;
+    // $mail->AltBody = $altBody !== "" ? $altBody : strip_tags($htmlBody);
+
+    // $mail->send();
+    // return true;
+  } catch (\Exception $e) {
+    error_log("Mailer error: " . $e->getMessage());
     return false;
   }
 }
