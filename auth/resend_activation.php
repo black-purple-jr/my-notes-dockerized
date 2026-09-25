@@ -13,7 +13,7 @@ require "../models/User.php";
 $rawToken = bin2hex(random_bytes(32));
 User::setActivationToken($_SESSION["current_user_id"], hash("sha256", $rawToken));
 
-$activationLink = BASE_URL . "auth/activate.php?token=" . $rawToken;
+$activationLink = BASE_URL . "/auth/activate.php?token=" . $rawToken;
 
 $html = '
 <!DOCTYPE html>
