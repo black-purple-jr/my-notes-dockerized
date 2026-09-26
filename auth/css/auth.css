@@ -1,5 +1,16 @@
 @import url('../../styles/root.css');
 
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 body {
   display: flex;
   align-items: center;
