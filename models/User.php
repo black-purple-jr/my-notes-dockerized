@@ -64,7 +64,18 @@ class User extends DB
     return $result;
   }
 
-  // public static function updateUserCredentials(string $user_id, string $user_email, string $username, string $new_password) {}
+  public static function updateUserCredentials(string $user_id, string $user_email, string $username) {
+    $pdo = self::connect();
+    $query = "UPDATE users SET user_email = :user_email, username = :username WHERE user_id = :user_id";
+
+    $statement = $pdo->prepare($query);
+    $statement->bindParam(":user_id", $user_id);
+    $statement->bindParam(":user_email", $user_email);
+    $statement->bindParam(":username", $username);
+    $result = $statement->execute();
+
+    return $result;
+  }
 
   public static function setProfilePicture(string $id, string $pfp, string $mime)
   {
@@ -150,7 +161,8 @@ class User extends DB
     $query = "UPDATE users SET is_activated = 1, activation_token = NULL WHERE user_id = :user_id";
     $statement = $pdo->prepare($query);
     $statement->bindParam(":user_id", $user_id);
-    $result =  $statement->execute();
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
 
     return $result;
   }
