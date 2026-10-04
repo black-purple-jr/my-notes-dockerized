@@ -55,7 +55,7 @@ $user = User::getUserById($current_user_id);
     </a>
   </header>
   <main>
-    <h2 align="center">comming soon</h2>
+    <h2 style="margin-top: 100px; text-align: center; color: #777777;" >comming soon</h2>
   </main>
 </body>
 
