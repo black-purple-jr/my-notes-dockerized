@@ -12,13 +12,14 @@ class DB
   protected static function connect(): PDO
   {
     $server = $_ENV["DB_HOST"];
+    $port = $_ENV["DB_PORT"] ?? "3306";
     $username = $_ENV["DB_USERNAME"];
     $password = $_ENV["DB_PASSWORD"];
     $database = $_ENV["DB_DATABASE"];
     $charset = "utf8mb4";
 
     try {
-      $dsn = "mysql:host=$server;dbname=$database;charset=$charset";
+      $dsn = "mysql:host=$server;port=$port;dbname=$database;charset=$charset";
       $pdo = new PDO($dsn, $username, $password);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

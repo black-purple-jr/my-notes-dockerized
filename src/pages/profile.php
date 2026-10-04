@@ -55,63 +55,7 @@ $user = User::getUserById($current_user_id);
     </a>
   </header>
   <main>
-    <div class="content">
-      <h2 class="title">personal info</h2>
-      <div class="general-info">
-        <div class="pic">
-          <div class="pfp">
-            <?php if ($user['profile_picture']): ?>
-              <img src="data:<?= $user['profile_picture_mime'] ?>;base64,<?= $user['profile_picture'] ?>"
-                alt="Profile picture" width="150" height="150" style="border-radius: 100px;">
-            <?php else: ?>
-              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-icon lucide-circle-user" id="profile">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="10" r="3" />
-                <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
-              </svg>
-            <?php endif; ?>
-          </div>
-        </div>
-        <div class="info">
-          <div class="username"><?php echo htmlspecialchars($user["username"]); ?></div>
-          <div class="email"><?php echo htmlspecialchars($user["user_email"]); ?></div>
-        </div>
-      </div>
-      <h2 class="title">update personal info</h2>
-      <form action="" method="post" class="box">
-        <div class="row">
-          <label for="pfpInput">Profile picture</label>
-          <input type="file" name="user_pfp" id="pfpInput" />
-
-          <label for="usernameInput">Username</label>
-          <input type="text" id="usernameInput" placeholder="Enter your new username" value="<?php echo htmlspecialchars($user["username"]); ?>">
-
-          <label for="passwordInput">New password</label>
-          <input type="password" id="passwordInput" name="new_pwd" placeholder="Enter your new password" />
-
-          <label for="passwordConfirmationInput">Confirm new password</label>
-          <input type="password" id="passwordConfirmationInput" name="confirm_new_pwd" placeholder="Confirm your new password" />
-        </div>
-        <div class="row">
-          <button type="submit">Update your profile</button>
-        </div>
-      </form>
-      <h2 class="title">danger zone</h2>
-      <div class="box">
-        <div class="actions">
-          <a href="../../auth/logout.php">
-            Delete permanently
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cf272f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2">
-              <path d="M10 11v6" />
-              <path d="M14 11v6" />
-              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-              <path d="M3 6h18" />
-              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
+    
   </main>
 </body>
 
