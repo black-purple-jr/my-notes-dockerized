@@ -109,6 +109,7 @@ textarea::-webkit-scrollbar-track {
 
 input {
   text-transform: capitalize;
+  margin-bottom: 30px;
 }
 
 .btn-group {
