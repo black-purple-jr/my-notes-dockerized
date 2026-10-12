@@ -194,7 +194,7 @@ if (isset($_POST["note-title"]) && isset($_POST["note-content"])) {
       <span>
         Welcome back
         <span style="color: var(--brand-main-color);"><?php echo $_SESSION["current_user_username"] ?></span>
-      </span>
+      </span><a href="./test.php">test</a>
       <?php if (!$_SESSION["current_user_activated"]) {
         echo '<a href="./auth/resend_activation.php">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-main-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check">
