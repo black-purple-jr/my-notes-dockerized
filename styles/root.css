@@ -3,6 +3,13 @@
   src: url("../assets/fonts/Geist/Geist-VariableFont_wght.ttf");
 }
 
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+
+
+
 :root {
   --background-main-color: #121212;
   --first-layer-background: #1e1e1e;
@@ -14,7 +21,8 @@
   --main-neutral-color: #838383;
   --border-color: #2a2a2a;
   --brand-main-color: #5b5eeb;
-  --default-font: "Geist", sans-serif;
+  /* --default-font: "Geist", sans-serif; */
+  --default-font: "Inter", sans-serif;
   --danger-color: #cf272f;
 }
 
@@ -27,4 +35,3 @@
   /* user-select: none; */
   scrollbar-gutter: stable;
 }
-
