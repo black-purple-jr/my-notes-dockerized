@@ -30,7 +30,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--default-font);
+  font-family: "Inter", sans-serif;
   /* -webkit-user-select: none; */
   /* user-select: none; */
   scrollbar-gutter: stable;
